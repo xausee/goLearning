@@ -4,15 +4,12 @@ import "fmt"
 
 func insert_sort(m []int) {
 	for i := 1; i < len(m); i++ {
-		tmp := m[i]
-		j := i - 1
-		for tmp < m[j] && j > 0 {
+		tmp, j := m[i], i-1
+		for ; j >= 0 && tmp < m[j]; j-- {
 			m[j+1] = m[j]
-			fmt.Println(j)
-			j--
 		}
 		m[j+1] = tmp
-		fmt.Println(m)
+		fmt.Println(i, m)
 	}
 }
 

@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func insert_sort(m []int) {
+func insertSort(m []int) {
 	for i := 1; i < len(m); i++ {
 		tmp, j := m[i], i-1
 		for ; j >= 0 && tmp < m[j]; j-- {
@@ -16,6 +16,6 @@ func insert_sort(m []int) {
 func main() {
 	a := []int{123, 43, 5, 78, 89, 9, 0, 4}
 	fmt.Println("original array: \n", a)
-	insert_sort(a)
+	insertSort(a)
 	fmt.Println("after sorted: \n", a)
 }

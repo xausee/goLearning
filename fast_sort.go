@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func fastSort(m []int, start int, end int) {
+func quickSort(m []int, start int, end int) {
 	if start < end {
 		i, j, x := start, end, m[start]
 		for i < j {
@@ -24,14 +24,18 @@ func fastSort(m []int, start int, end int) {
 			}
 		}
 		fmt.Println(m)
-		fastSort(m, start, j-1)
-		fastSort(m, j+1, end)
+		quickSort(m, start, j-1)
+		quickSort(m, j+1, end)
 	}
+}
+
+func QuickSort(m []int) {
+	quickSort(m, 0, len(m)-1)
 }
 
 func main() {
 	a := []int{10, 3, 56, 67, 4, 33, 123, 0, 7, 50}
 	fmt.Println("oringinal array: \n", a)
-	fastSort(a, 0, len(a)-1)
+	QuickSort(a)
 	fmt.Println("after sorted:  \n", a)
 }
